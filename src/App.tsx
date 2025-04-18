@@ -82,7 +82,7 @@ const mockApi = {
       : [];
     const index = transactions.findIndex((t) => t.id === id);
     if (index === -1) {
-      return null; // 
+      return null;   
     }
     const updatedTransaction = {
       ...transactions[index],
@@ -113,7 +113,7 @@ interface Transaction {
 }
 
 const formatDate = (date: Date) => {
-  return format(date, "PPP"); // 
+  return format(date, "PPP");   
 };
 
 const App = () => {
@@ -198,7 +198,7 @@ const [editingTransaction, setEditingTransaction] =
       });
     } else {
        setEditingTransaction(null);
-      setFormData({ amount: "", date: undefined, description: "" }); // 
+      setFormData({ amount: "", date: undefined, description: "" });   
     }
     setIsDialogOpen(true);
   };
@@ -291,7 +291,7 @@ const [editingTransaction, setEditingTransaction] =
     }
   };
   if (loading) {
-    return <div className="p-4 text-center">Loading...</div>; // 
+    return <div className="p-4 text-center">Loading...</div>;   
   }
 
   if (error) {
