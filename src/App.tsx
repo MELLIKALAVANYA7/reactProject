@@ -47,7 +47,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 const mockApi = {
   getTransactions: async (): Promise<Transaction[]> => {
-    // Simulate network delay
+    
     await new Promise((resolve) => setTimeout(resolve, 500));
     const storedTransactions = localStorage.getItem("transactions");
     return storedTransactions ? JSON.parse(storedTransactions) : [];
@@ -82,7 +82,7 @@ const mockApi = {
       : [];
     const index = transactions.findIndex((t) => t.id === id);
     if (index === -1) {
-      return null; // Not found
+      return null;   
     }
     const updatedTransaction = {
       ...transactions[index],
@@ -113,10 +113,10 @@ interface Transaction {
 }
 
 const formatDate = (date: Date) => {
-  return format(date, "PPP"); // e.g., Jan 23, 2024
+  return format(date, "PPP");   
 };
 
-const PersonalFinanceApp = () => {
+const App = () => {
 const [transactions, setTransactions] = useState<Transaction[]>([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState<string | null>(null);
@@ -198,7 +198,7 @@ const [editingTransaction, setEditingTransaction] =
       });
     } else {
        setEditingTransaction(null);
-      setFormData({ amount: "", date: undefined, description: "" }); // Reset form
+      setFormData({ amount: "", date: undefined, description: "" });   
     }
     setIsDialogOpen(true);
   };
@@ -291,7 +291,7 @@ const [editingTransaction, setEditingTransaction] =
     }
   };
   if (loading) {
-    return <div className="p-4 text-center">Loading...</div>; // Simple loading indicator
+    return <div className="p-4 text-center">Loading...</div>;   
   }
 
   if (error) {
@@ -569,4 +569,4 @@ const [editingTransaction, setEditingTransaction] =
     </div>
   );
 };
-export default PersonalFinanceApp;
+export default App;
