@@ -1,6 +1,6 @@
 import './index.css';
 
-import App from './App';
+import App from './app';
 import DashboardPage from './Stage2';
 import PersonalFinanceApp from './Dashboard';
 import React from 'react';
